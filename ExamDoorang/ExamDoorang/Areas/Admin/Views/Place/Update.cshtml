@@ -1,0 +1,33 @@
+﻿@using ExamDoorang.Areas.Admin.ViewModels;
+@model UpdatePlaceVM
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Update</h4>
+        <form method="post" enctype="multipart/form-data" class="forms-sample">
+            <input type="hidden" asp-for="PhotoUrl"/>
+            <img src="~/assets/imgs/@Model.PhotoUrl" style="width:100px;height:100px;" />
+            <div class="form-group">
+                <label asp-for="Photo">Photo</label>
+                <input class="form-control" asp-for="Photo" placeholder="Photo">
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title">Name</label>
+                <input class="form-control" asp-for="Title" placeholder="Name">
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subtitle">Name</label>
+                <input class="form-control" asp-for="Subtitle" placeholder="Name">
+                <span asp-validation-for="Subtitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Description</label>
+                <input class="form-control" asp-for="Description" placeholder="Description">
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary me-2">Submit</button>
+            <a asp-action="index" asp-controller="service" class="btn btn-light">Cancel</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Table</h4>
+        <a asp-action="create" asp-controller="place" asp-area="admin" class="btn btn-outline-primary btn-fw">Create</a>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            No
+                        </th>
+                        <th>
+                            Img
+                        </th>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Settings
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                            </td>
+                            <td class="py-1">
+                                <img src="~/assets/imgs/@item.PhotoUrl" alt="image" />
+                            </td>
+                            <td>
+                                @item.Title
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a asp-action="delete" asp-controller="place" asp-route-id="@item.Id" class="btn btn-outline-secondary">
+                                        <i class="mdi mdi-delete"></i>
+                                    </a>
+                                    <a asp-action="update" asp-controller="place" asp-route-id="@item.Id" class="btn btn-outline-secondary">
+                                        <i class="mdi mdi-pencil"></i>
+                                    </a>
+                                    
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+          
+        </div>
+    </div>
+</div>
